@@ -1,0 +1,298 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Meshes/Gecko.tres" type="ArrayMesh" id=1]
+[ext_resource path="res://Materials/Gecko_MAT.tres" type="Material" id=2]
+[ext_resource path="res://Prefabs/Target.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/ProcAnimator.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/IkRunner.gd" type="Script" id=5]
+[ext_resource path="res://Meshes/DynamicTail.tres" type="ArrayMesh" id=6]
+
+[sub_resource type="Skin" id=1]
+resource_name = "Skin"
+bind_count = 26
+bind/0/bone = 0
+bind/0/pose = Transform( -1, 1.15966e-07, 9.67042e-08, 0, 0.640443, -0.768006, -1.50996e-07, -0.768006, -0.640443, 0, 0, 0 )
+bind/1/bone = 1
+bind/1/pose = Transform( -0.314864, 0.113697, -0.942302, -0.934267, -0.212175, 0.286578, -0.16735, 0.970595, 0.17303, -0.711705, 0.318078, -0.436688 )
+bind/2/bone = 2
+bind/2/pose = Transform( -0.707132, 0.419011, -0.569556, -0.00278911, -0.807149, -0.590341, -0.707076, -0.41586, 0.57193, -0.935728, 0.0532846, -0.0512028 )
+bind/3/bone = 3
+bind/3/pose = Transform( -0.616987, -3.16343e-07, -0.786973, -0.786973, -1.70742e-08, 0.616987, -7.93261e-08, 1, -2.4609e-07, -0.994666, -0.108256, -0.0804957 )
+bind/4/bone = 4
+bind/4/pose = Transform( -1, 8.69849e-08, -8.73638e-09, 1.68754e-14, 0.0999332, 0.994994, 8.74226e-08, 0.994994, -0.099933, -5.57727e-08, 0.625613, -0.637968 )
+bind/5/bone = 5
+bind/5/pose = Transform( -1, 3.24056e-06, 2.5486e-07, 2.84217e-14, -0.0784048, 0.996921, 3.25057e-06, 0.996922, 0.0784049, -2.07777e-06, 0.0502714, -0.639203 )
+bind/6/bone = 6
+bind/6/pose = Transform( 0.295928, 0.130983, -0.946187, -0.866637, -0.379752, -0.323618, -0.401705, 0.915769, 0.00113607, 0.653781, 0.470067, -0.532493 )
+bind/7/bone = 7
+bind/7/pose = Transform( -0.974106, -0.000683449, -0.22609, -0.138917, -0.787157, 0.600904, -0.178378, 0.616752, 0.76668, -0.531647, -0.179639, -0.697087 )
+bind/8/bone = 8
+bind/8/pose = Transform( -0.934883, -8.04935e-08, -0.354956, -0.354955, 6.50727e-08, 0.934883, 4.17925e-08, 1, 1.58678e-08, -0.413165, -0.909726, -0.0502178 )
+bind/9/bone = 9
+bind/9/pose = Transform( -1, 1.57615e-06, 1.29798e-07, 5.68434e-14, -0.0820731, 0.996626, 1.58149e-06, 0.996626, 0.0820733, -1.0151e-06, -0.721079, -0.641861 )
+bind/10/bone = 10
+bind/10/pose = Transform( -1, 1.28755e-06, 3.75465e-07, 2.72735e-10, -0.279756, 0.960071, 1.34118e-06, 0.960071, 0.279756, -1.09215e-06, -0.779191, -0.814165 )
+bind/11/bone = 11
+bind/11/pose = Transform( -1, 3.59729e-07, 1.45553e-07, 2.6337e-10, -0.37445, 0.927247, 3.8806e-07, 0.927247, 0.37445, -3.61392e-07, -1.11875, -0.93082 )
+bind/12/bone = 12
+bind/12/pose = Transform( -0.74325, -0.0105951, -0.66893, -0.663022, 0.145181, 0.734387, 0.0893352, 0.989349, -0.114931, 0.658745, -0.798484, -0.445514 )
+bind/13/bone = 13
+bind/13/pose = Transform( -1, -7.45059e-09, -3.53903e-08, -3.81842e-08, 1.56462e-07, 1, -2.23517e-08, 1, 1.49012e-08, -0.33226, -1.34387, -0.636427 )
+bind/14/bone = 14
+bind/14/pose = Transform( -0.74325, 0.010595, 0.66893, 0.663022, 0.145181, 0.734387, -0.0893352, 0.989349, -0.114931, -0.658745, -0.798483, -0.445514 )
+bind/15/bone = 15
+bind/15/pose = Transform( -1, 7.45059e-09, 3.53903e-08, 3.44589e-08, 1.86265e-07, 1, 2.98023e-08, 1, -1.49012e-08, 0.33226, -1.34387, -0.636427 )
+bind/16/bone = 16
+bind/16/pose = Transform( 0.295928, -0.130983, 0.946187, 0.866637, -0.379752, -0.323618, 0.401705, 0.915769, 0.0011363, -0.653781, 0.470066, -0.532494 )
+bind/17/bone = 17
+bind/17/pose = Transform( -0.974107, 0.000683204, 0.226089, 0.138917, -0.787157, 0.600904, 0.178379, 0.616752, 0.76668, 0.531647, -0.179639, -0.697087 )
+bind/18/bone = 18
+bind/18/pose = Transform( -0.934883, 7.01757e-08, 0.354956, 0.354956, 1.00868e-07, 0.934883, 8.7459e-08, 1, 6.24281e-08, 0.413165, -0.909726, -0.0502179 )
+bind/19/bone = 19
+bind/19/pose = Transform( 1, -7.10543e-15, -7.10543e-15, 7.10543e-15, -2.98023e-08, -1, -2.13163e-14, 1, 2.98023e-08, -8.09881e-16, -0.686235, -0.572255 )
+bind/20/bone = 20
+bind/20/pose = Transform( 1, -1.26218e-29, -2.11758e-22, 1.42109e-14, -5.96046e-08, -1, -2.84217e-14, 1, 6.01853e-36, 3.35893e-15, -1.15896, -0.572255 )
+bind/21/bone = 21
+bind/21/pose = Transform( 1, 0, 0, 1.66997e-14, -0.0895773, -0.99598, -2.70345e-14, 0.99598, -0.0895773, 3.35893e-15, -1.57387, -0.716116 )
+bind/22/bone = 22
+bind/22/pose = Transform( 1, 0, 0, 1.89026e-14, -0.172577, -0.984996, -2.55428e-14, 0.984996, -0.172577, 3.35893e-15, -1.98142, -0.884964 )
+bind/23/bone = 23
+bind/23/pose = Transform( -0.314864, -0.113697, 0.942302, 0.934267, -0.212175, 0.286578, 0.16735, 0.970595, 0.17303, 0.711705, 0.318078, -0.436688 )
+bind/24/bone = 24
+bind/24/pose = Transform( -0.707132, -0.419011, 0.569556, 0.00278912, -0.807149, -0.59034, 0.707076, -0.41586, 0.571929, 0.935728, 0.0532846, -0.0512028 )
+bind/25/bone = 25
+bind/25/pose = Transform( -0.616987, 2.00669e-07, 0.786973, 0.786973, -1.83501e-07, 0.616987, 1.58775e-07, 1, -1.54216e-07, 0.994665, -0.108256, -0.0804956 )
+
+[node name="Gecko" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="Targets" type="Spatial" parent="."]
+
+[node name="Target" parent="Targets" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 5 )
+
+[node name="TargetRightHand" type="Position3D" parent="Targets"]
+transform = Transform( -1, -1.50996e-07, -6.60024e-15, 0, -4.37114e-08, 1, -1.50996e-07, 1, 4.37114e-08, -0.7, 0.04, 0.7 )
+
+[node name="TargetLeftHand" type="Position3D" parent="Targets"]
+transform = Transform( -1, 3.25841e-07, 5.30863e-14, 0, -1.62921e-07, 1, 3.25841e-07, 1, 1.62921e-07, 0.7, 0.04, 0.7 )
+
+[node name="TargetRightFoot" type="Position3D" parent="Targets"]
+transform = Transform( -0.766045, -0.642787, -1.04723e-07, 0, -1.62921e-07, 1, -0.642787, 0.766045, 1.24805e-07, -0.75, 0.04, -0.7 )
+
+[node name="TargetLeftFoot" type="Position3D" parent="Targets"]
+transform = Transform( -0.766045, 0.642787, 1.04723e-07, 0, -1.62921e-07, 1, 0.642787, 0.766045, 1.24805e-07, 0.75, 0.04, -0.7 )
+
+[node name="Armature" type="Spatial" parent="."]
+
+[node name="Skeleton" type="Skeleton" parent="Armature"]
+bones/0/name = "root"
+bones/0/parent = -1
+bones/0/rest = Transform( -1, 1.06581e-14, -1.50996e-07, 1.15966e-07, 0.640443, -0.768005, 9.67042e-08, -0.768005, -0.640443, 0, 0, 0 )
+bones/0/enabled = true
+bones/0/bound_children = [  ]
+bones/1/name = "leg_1_r"
+bones/1/parent = 0
+bones/1/rest = Transform( 0.314864, 0.934267, 0.16735, 0.79651, -0.35598, 0.488723, 0.516171, -0.0205854, -0.856238, 7.10543e-15, 0.893529, 0 )
+bones/1/enabled = true
+bones/1/bound_children = [  ]
+bones/2/name = "leg_2_r"
+bones/2/parent = 1
+bones/2/rest = Transform( 0.806985, 0.465387, -0.36358, 0.408523, 0.00468373, 0.912736, 0.426478, -0.885095, -0.186342, 7.45058e-09, 0.74683, 0 )
+bones/2/enabled = true
+bones/2/bound_children = [  ]
+bones/3/name = "foot_r"
+bones/3/parent = 2
+bones/3/rest = Transform( 0.884517, 0.205085, 0.419011, 0.466303, -0.362038, -0.807149, -0.013836, 0.909323, -0.41586, 5.21541e-08, 0.412936, 0 )
+bones/3/enabled = true
+bones/3/bound_children = [  ]
+bones/4/name = "spine_1"
+bones/4/parent = 0
+bones/4/rest = Transform( 1, 1.07809e-07, 1.82986e-08, 6.24185e-08, -0.70016, 0.713986, 8.9786e-08, -0.713986, -0.70016, 7.10543e-15, 0.893529, 0 )
+bones/4/enabled = true
+bones/4/bound_children = [ NodePath("TailAttachment") ]
+bones/5/name = "spine_2"
+bones/5/parent = 4
+bones/5/rest = Transform( 1, -1.55296e-08, -3.16453e-06, 5.77423e-07, 0.984096, 0.177638, 3.11145e-06, -0.177638, 0.984096, -2.69562e-15, 0.689688, 0 )
+bones/5/enabled = true
+bones/5/bound_children = [  ]
+bones/6/name = "arm_1_r"
+bones/6/parent = 5
+bones/6/rest = Transform( -0.295928, 0.866636, 0.401708, -0.953544, -0.292848, -0.0706683, 0.0563956, -0.403959, 0.913037, -4.46544e-14, 0.773708, 2.6077e-08 )
+bones/6/enabled = true
+bones/6/bound_children = [  ]
+bones/7/name = "arm_2_r"
+bones/7/parent = 6
+bones/7/rest = Transform( -0.074432, -0.712782, -0.697425, 0.917623, 0.224852, -0.327735, 0.39042, -0.664367, 0.637329, -8.56817e-08, 0.769851, 2.858e-08 )
+bones/7/enabled = true
+bones/7/bound_children = [  ]
+bones/8/name = "hand_r"
+bones/8/parent = 7
+bones/8/rest = Transform( 0.990927, 0.134397, -0.000683371, -0.0834228, 0.611084, -0.787157, -0.105374, 0.780073, 0.616752, -6.35446e-08, 0.302284, -6.89179e-08 )
+bones/8/enabled = true
+bones/8/bound_children = [  ]
+bones/9/name = "neck"
+bones/9/parent = 5
+bones/9/rest = Transform( 1, -1.19627e-08, 1.66906e-06, 5.82017e-09, 0.999993, 0.00368018, -1.66909e-06, -0.00368018, 0.999993, -4.46544e-14, 0.773708, 2.6077e-08 )
+bones/9/enabled = true
+bones/9/bound_children = [  ]
+bones/10/name = "head_1"
+bones/10/parent = 9
+bones/10/rest = Transform( 1, -3.16596e-07, 2.0835e-07, 2.68525e-07, 0.979793, 0.200016, -2.67464e-07, -0.200016, 0.979793, -2.38634e-15, 0.205213, 0 )
+bones/10/enabled = true
+bones/10/bound_children = [  ]
+bones/11/name = "head_2"
+bones/11/parent = 10
+bones/11/rest = Transform( 1, -1.34237e-07, 9.46411e-07, 3.88321e-08, 0.994978, 0.100095, -9.55095e-07, -0.100095, 0.994978, 6.98747e-14, 0.427107, 5.96046e-08 )
+bones/11/enabled = true
+bones/11/bound_children = [  ]
+bones/12/name = "head_to_eye_r"
+bones/12/parent = 9
+bones/12/rest = Transform( 0.74325, 0.663022, -0.0893337, -0.665803, 0.719994, -0.195742, -0.0654616, 0.204964, 0.976578, -2.38634e-15, 0.205213, 0 )
+bones/12/enabled = true
+bones/12/bound_children = [  ]
+bones/13/name = "eye_r"
+bones/13/parent = 12
+bones/13/rest = Transform( 0.74325, -0.66893, -0.0105949, 0.663022, 0.734387, 0.145181, -0.0893352, -0.114931, 0.989348, 2.00234e-08, 0.501129, -2.23517e-08 )
+bones/13/enabled = true
+bones/13/bound_children = [  ]
+bones/14/name = "head_to_eye_l"
+bones/14/parent = 9
+bones/14/rest = Transform( 0.74325, -0.663022, 0.0893368, 0.665803, 0.719994, -0.195742, 0.0654593, 0.204966, 0.976578, -2.38634e-15, 0.205213, 0 )
+bones/14/enabled = true
+bones/14/bound_children = [  ]
+bones/15/name = "eye_l"
+bones/15/parent = 14
+bones/15/rest = Transform( 0.74325, 0.66893, 0.0105949, -0.663022, 0.734387, 0.145181, 0.0893353, -0.114931, 0.989348, -7.49715e-08, 0.501129, 3.72529e-09 )
+bones/15/enabled = true
+bones/15/bound_children = [  ]
+bones/16/name = "arm_1_l"
+bones/16/parent = 5
+bones/16/rest = Transform( -0.295928, -0.866639, -0.401702, 0.953544, -0.292847, -0.070668, -0.0563937, -0.403953, 0.91304, -4.46544e-14, 0.773708, 2.6077e-08 )
+bones/16/enabled = true
+bones/16/bound_children = [  ]
+bones/17/name = "arm_2_l"
+bones/17/parent = 16
+bones/17/rest = Transform( -0.0744317, 0.712782, 0.697425, -0.917623, 0.224852, -0.327735, -0.390421, -0.664367, 0.637329, 1.49012e-08, 0.769851, 4.07454e-10 )
+bones/17/enabled = true
+bones/17/bound_children = [  ]
+bones/18/name = "hand_l"
+bones/18/parent = 17
+bones/18/rest = Transform( 0.990927, -0.134398, 0.000683136, 0.0834229, 0.611085, -0.787157, 0.105375, 0.780072, 0.616752, -5.30999e-08, 0.302284, 7.45058e-09 )
+bones/18/enabled = true
+bones/18/bound_children = [  ]
+bones/19/name = "tail_1"
+bones/19/parent = 0
+bones/19/rest = Transform( -1, -9.67042e-08, 1.15966e-07, 1.06581e-14, 0.768006, 0.640443, -1.50996e-07, 0.640443, -0.768005, 7.10543e-15, 0.893529, 0 )
+bones/19/enabled = true
+bones/19/bound_children = [  ]
+bones/20/name = "tail_2"
+bones/20/parent = 19
+bones/20/rest = Transform( 1, 7.10543e-15, -7.10543e-15, -7.10543e-15, 1, 2.98023e-08, 7.10543e-15, -2.98023e-08, 1, -5.29396e-23, 0.472727, -3.45398e-08 )
+bones/20/enabled = true
+bones/20/bound_children = [  ]
+bones/21/name = "tail_3"
+bones/21/parent = 20
+bones/21/rest = Transform( 1, 1.05028e-22, 1.4217e-23, -1.05879e-22, 0.99598, 0.0895773, -4.75174e-24, -0.0895773, 0.99598, 1.33765e-22, 0.472727, 0 )
+bones/21/enabled = true
+bones/21/bound_children = [  ]
+bones/22/name = "tail_4"
+bones/22/parent = 21
+bones/22/rest = Transform( 1, -1.55266e-23, 3.70577e-22, -1.55266e-23, 0.996495, 0.0836499, -3.70577e-22, -0.0836499, 0.996495, 2.11758e-22, 0.474635, -4.47035e-08 )
+bones/22/enabled = true
+bones/22/bound_children = [  ]
+bones/23/name = "leg_1_l"
+bones/23/parent = 0
+bones/23/rest = Transform( 0.314864, -0.934267, -0.16735, -0.79651, -0.35598, 0.488723, -0.516171, -0.0205857, -0.856238, 7.10543e-15, 0.893529, 0 )
+bones/23/enabled = true
+bones/23/bound_children = [  ]
+bones/24/name = "leg_2_l"
+bones/24/parent = 23
+bones/24/rest = Transform( 0.806985, -0.465387, 0.36358, -0.408524, 0.00468373, 0.912736, -0.426478, -0.885095, -0.186342, -1.11759e-08, 0.74683, 2.23517e-08 )
+bones/24/enabled = true
+bones/24/bound_children = [  ]
+bones/25/name = "foot_l"
+bones/25/parent = 24
+bones/25/rest = Transform( 0.884517, -0.205085, -0.419011, -0.466303, -0.362037, -0.80715, 0.0138362, 0.909323, -0.41586, 9.31323e-08, 0.412935, 2.6077e-08 )
+bones/25/enabled = true
+bones/25/bound_children = [  ]
+
+[node name="Mesh" type="MeshInstance" parent="Armature/Skeleton"]
+mesh = ExtResource( 1 )
+skin = SubResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="IkRightHand" type="SkeletonIK" parent="Armature/Skeleton"]
+process_priority = 1
+root_bone = "arm_1_r"
+tip_bone = "hand_r"
+use_magnet = true
+magnet = Vector3( -10, 10, -10 )
+target_node = NodePath("../../../Targets/TargetRightHand")
+script = ExtResource( 5 )
+
+[node name="IkLeftHand" type="SkeletonIK" parent="Armature/Skeleton"]
+process_priority = 1
+root_bone = "arm_1_l"
+tip_bone = "hand_l"
+use_magnet = true
+magnet = Vector3( 10, 10, -10 )
+target_node = NodePath("../../../Targets/TargetLeftHand")
+script = ExtResource( 5 )
+
+[node name="IkRightFoot" type="SkeletonIK" parent="Armature/Skeleton"]
+process_priority = 1
+root_bone = "leg_1_r"
+tip_bone = "foot_r"
+use_magnet = true
+magnet = Vector3( -10, 10, 10 )
+target_node = NodePath("../../../Targets/TargetRightFoot")
+script = ExtResource( 5 )
+
+[node name="IkLeftFoot" type="SkeletonIK" parent="Armature/Skeleton"]
+process_priority = 1
+root_bone = "leg_1_l"
+tip_bone = "foot_l"
+use_magnet = true
+magnet = Vector3( 10, 10, 10 )
+target_node = NodePath("../../../Targets/TargetLeftFoot")
+script = ExtResource( 5 )
+
+[node name="TailAttachment" type="BoneAttachment" parent="Armature/Skeleton"]
+transform = Transform( -1, 2.13163e-14, 8.74228e-08, 8.69854e-08, 0.0999322, 0.994994, -8.73634e-09, 0.994994, -0.0999322, 2.41789e-15, 0.572254, -0.686235 )
+bone_name = "spine_1"
+
+[node name="DynamicBone" type="SoftBody" parent="Armature/Skeleton/TailAttachment"]
+transform = Transform( -1, -3.25842e-07, -5.50671e-14, 0, -1.71363e-07, 1, -3.25841e-07, 1, 1.78814e-07, -3.55271e-15, 0.686, -0.572 )
+visible = false
+mesh = ExtResource( 6 )
+material/0 = null
+collision_layer = 0
+collision_mask = 0
+pinned_points = [ 9, 8, 7, 6 ]
+attachments/0/point_index = 9
+attachments/0/spatial_attachment_path = NodePath("..")
+attachments/0/offset = Vector3( 0.0750758, -0.0002352, 0.0753309 )
+attachments/1/point_index = 8
+attachments/1/spatial_attachment_path = NodePath("..")
+attachments/1/offset = Vector3( -0.0750762, -0.0002352, 0.0753309 )
+attachments/2/point_index = 7
+attachments/2/spatial_attachment_path = NodePath("..")
+attachments/2/offset = Vector3( -0.0750762, -0.00023514, -0.0748212 )
+attachments/3/point_index = 6
+attachments/3/spatial_attachment_path = NodePath("..")
+attachments/3/offset = Vector3( 0.0750758, -0.00023514, -0.0748211 )
+
+[node name="HomePoints" type="Spatial" parent="Armature/Skeleton"]
+
+[node name="HomeRightHand" type="Position3D" parent="Armature/Skeleton/HomePoints"]
+transform = Transform( -1, 3.25841e-07, 5.30863e-14, 0, -1.62921e-07, 1, 3.25841e-07, 1, 1.62921e-07, -0.7, 0.04, 0.7 )
+
+[node name="HomeLeftHand" type="Position3D" parent="Armature/Skeleton/HomePoints"]
+transform = Transform( -1, 3.25841e-07, 5.30863e-14, 0, -1.62921e-07, 1, 3.25841e-07, 1, 1.62921e-07, 0.7, 0.04, 0.7 )
+
+[node name="HomeRightFoot" type="Position3D" parent="Armature/Skeleton/HomePoints"]
+transform = Transform( -0.766045, -0.642787, -1.04723e-07, 0, -1.62921e-07, 1, -0.642787, 0.766045, 1.24805e-07, -0.75, 0.04, -0.7 )
+
+[node name="HomeLeftFoot" type="Position3D" parent="Armature/Skeleton/HomePoints"]
+transform = Transform( -0.766045, 0.642787, 1.04723e-07, 0, -1.62921e-07, 1, 0.642787, 0.766045, 1.24805e-07, 0.75, 0.04, -0.7 )
