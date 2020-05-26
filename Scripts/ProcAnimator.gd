@@ -207,7 +207,7 @@ func move_body(_delta: float) -> void:
 			)
 	var tmp_rot: Vector3 = armature.global_transform.basis.get_euler()
 	tmp_rot.y += current_angular_velocity * _delta
-	armature.global_transform.basis = Quat(tmp_rot)
+	armature.global_transform.basis = Basis(Quat(tmp_rot))
 	# Movement of the body
 	var target_velocity: Vector3 = Vector3.ZERO
 	if (abs(angle_to_target) < max_angle_to_move):
